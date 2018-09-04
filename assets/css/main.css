@@ -1,7 +1,10 @@
 body{
     background-color: black;
+    background-image: url(../images/travel.jpeg);
+    /* background-size: cover; */
     width: 100%;
-    height: 100%;
+    height: 110%;
+
 
 }
 
@@ -16,33 +19,54 @@ margin-top: 300px;
 }
 
 .go {
-margin-left: 40%;
-margin-right: 20%;
 color: white;
 
-margin-top: 30px;
+
 }
 
-#map {
-    width: 100%;
-}
+
 
 .submission1 {
+margin-top: 5px;
 margin-left: 20%;
-margin-right: 20%;
-width: 50%;
+margin-right: 30%;
+width: 40%;
 }
 
 .text1 {
+margin-top: 20px;
 margin-left: 20%;
-margin-right: 20%;
-width: 50%;
+margin-right: 30%;
+width: 40%;
 text-align: center;
 }
 
 
 
-.fa {
-margin-left: 25%;
-margin-right: 10%;
+
+
+
+#map {
+    width:475px;
+    height: 400px;
+    margin-top: 10px;
+}
+
+.btn1 {
+    margin-left: 650px;
+    color: white;
+}
+
+.copy {
+    color: white;
+    margin-top: 20px;
+}
+
+
+#pointsofi {
+    background-color: rgb(197, 197, 197);
+    margin-top: 10px;
+    width:475px;
+    height: 400px;
+    
 }
