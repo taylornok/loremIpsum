@@ -124,7 +124,7 @@ text-align: center;
 }
 
 #emptyDiv {
-    background-color: rgb(190, 188, 188);
+    /* background-color: rgb(190, 188, 188); */
     margin-top: 20px;
     width:475px;
     height: 400px;
@@ -160,6 +160,27 @@ text-align: center;
     height:120px;
     position: fixed;
     background-color: #212529;
+}
+
+
+
+/* This is for the orbit */
+/* ----------------------------------------------------------------------------------------- */
+
+
+
+.globe {
+    background-image: url(../images/earth.jpeg);
+    background-size: unset;
+    /* background-position */
+    margin: 0 auto;
+    width: 400px;
+    height: 400px;
+    border-radius: 100%;
+    animation: rotate 20s linear alternate infinite;
+}
+@keyframes rotate {
+    100%{background-position: 100%;}
 }
 
 

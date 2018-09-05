@@ -73,6 +73,14 @@ function loadPointsOfInterest(){
 }
 
 
+
+
+        $( ".btn1" ).click(function() {
+            window.location.href="location.html"
+        });
+
+
+
     
     
     
