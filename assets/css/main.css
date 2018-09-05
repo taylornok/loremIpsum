@@ -2,6 +2,7 @@ body{
     background-color: black;
     background-image: url(../images/travel.jpeg);
     background-size: cover;
+    background-repeat: no-repeat;
     width: 100%;
     height: 110%;
 
@@ -46,6 +47,8 @@ text-align: center;
     margin-top: 10px;
 }
 
+/*-------This is for the buttons------------ */
+
 .btn {
    background-color: black;
    
@@ -57,6 +60,33 @@ text-align: center;
 
 }
 
+#locationPlay{
+    margin-left: 180px;
+    margin-top: 150px
+
+}
+
+.loadBtn {
+    width: 200px;
+    height: 200px;
+    background: #0088cc;
+    padding: 2%;
+    margin: auto;
+    /* text-align: center;
+    vertical-align: bottom; */
+}
+
+.fas {
+    padding: 20px;
+    font-size: 50px;
+    color: red;
+}
+
+
+
+
+/*-------This is for the buttons------------ */
+
 .copy {
     color: white;
     margin-top: 20px;
@@ -64,7 +94,9 @@ text-align: center;
 
 
 #pointsofi {
-    background-color: rgb(190, 188, 188);
+    background-color: rgb(187, 187, 187);
+    /* background-image: url(../images/travel3.jpeg);
+    background-size: cover;*/
     margin-top: 10px;
     width:475px;
     height: 400px;
@@ -112,3 +144,72 @@ text-align: center;
     height: 400px;
 }
 
+
+
+
+.logo {
+    color: white;
+    font-size: 30px;
+}
+
+
+
+.footer {
+    width:100%;
+    padding: 10px;
+    height:120px;
+    position: fixed;
+    background-color: #212529;
+}
+
+
+
+
+
+
+/* Media Queries, potentially just in case */
+/* ----------------------------------------------------------------------------------------- */
+
+
+
+
+
+
+/* desktop computer width */
+@media screen and (max-width: 980px) {
+    width: 100%;
+
+}
+
+
+
+
+
+
+
+
+/* Ipad */
+@media screen and (max-width: 768px) {
+    width: 100%;
+
+
+
+
+}
+
+
+
+
+
+
+
+/* mobiles */
+@media screen and (max-width: 640px) {
+    width: 100%;
+
+
+
+
+
+
+}

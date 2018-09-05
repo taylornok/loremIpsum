@@ -60,7 +60,7 @@ function loadPointsOfInterest(){
         response.results.forEach(function (location) {
 
 
-            $("#pointsofi").append("<li>"+location.name+" , "+ "Rating:" +location.rating+"</li>");
+            $("#pointsofi").append("<li>"+location.name+" , "+ "Rating: " +location.rating+"</li>");
            var myLatLng = { lat: location.geometry.location.lat, lng: location.geometry.location.lng }
            new google.maps.Marker({
                 position: myLatLng,
@@ -78,19 +78,3 @@ function loadPointsOfInterest(){
     
     
 
-function showError(error) {
-    switch (error.code) {
-        case error.PERMISSION_DENIED:
-            x.innerHTML = "User denied the request for Geolocation."
-            break;
-        case error.POSITION_UNAVAILABLE:
-            x.innerHTML = "Location information is unavailable."
-            break;
-        case error.TIMEOUT:
-            x.innerHTML = "The request to get user location timed out."
-            break;
-        case error.UNKNOWN_ERROR:
-            x.innerHTML = "An unknown error occurred."
-            break;
-    }
-}
