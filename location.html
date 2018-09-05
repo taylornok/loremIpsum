@@ -18,7 +18,7 @@
       <link rel="stylesheet" type="text/css" href="assets/css/main.css">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     
-    <title>Geolocation</title>
+    <title>Location</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <style>
@@ -30,17 +30,24 @@
 
       <header id="masthead">
           <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-              aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-      
+            
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Rooted<i class="fa fa-plane" style="font-size:24px;"></i>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="Index.html">Home</a>
+                <a class="dropdown-item" href="location.html">Locations</a>
+                <a class="dropdown-item" href="translation.html">Dictionary/Translate</a>
+                <a class="dropdown-item" href="Index.html">Profile</a>
+              </div>
+            </div>
             <div class="row">
                   
                     
-              <div class="col-xs-4 col-md-4 col-xl-6">
-                <h1 class="go">Rooted<i class="fa fa-plane" style="font-size:36px;"></i></h1>
-              </div>
+              <!-- <div class="col-xs-4 col-md-4 col-xl-6">
+                <button class="btn" style="color: white">Rooted<i class="fa fa-plane" style="font-size:24px;"></i></button>
+              </div> -->
 
               <div class="col-xs-4 col-md-4 col-xl-6">
                 <button type="button" class="btn1 btn-outline-dark my-2 my-sm-0" onclick="googleLogin();"><i class="fa fa-google" style="font-size:36px"></i>Google Login</button> 
@@ -60,11 +67,15 @@
 
           <div class="row">
             <div class="col-xs-6 col-md-6 col-xl-6">
+
+              <h3 class="headers">Location</h3>
               <div id="map"></div> 
             </div>
 
 
             <div class="col-xs-6  col-md-6 col-xl-6">
+              
+              <h3 class="headers">Points of interest</h3>
               <div id="pointsofi"></div> 
             </div>
 
@@ -148,18 +159,6 @@
         
       
 
-         $.ajax(settings).done(function (response) {
-        //console.log(response);
-        response.results.forEach(function (location) {
-            myLatLng = { lat: location.geometry.location.lat, lng: location.geometry.location.lng }
-            marker = new google.maps.Marker({
-                position: myLatLng,
-                map: map,
-                title: location.name,
-                icon: pinSymbol("green")
-            });
-        });
-    });
 
 
 
@@ -173,14 +172,11 @@
 
 
 
-        <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZYZbJI_suqw9VC2D1u1Us2e1j0f1mFus&callback=initMap">
-        </script>
   </div>
 
 
 
-
+<br><br>
   <!-- Footer -->
 
   <footer class="footer">
@@ -192,9 +188,13 @@
 
 
 
-
+  
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="geolocation.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZYZbJI_suqw9VC2D1u1Us2e1j0f1mFus&callback=getLocation">
+        </script>
   </body>
 </html>
