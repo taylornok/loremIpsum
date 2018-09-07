@@ -170,14 +170,14 @@ text-align: center;
 
 
 .globe {
-    background-image: url(../images/earth.jpeg);
-    background-size: unset;
+    background-image: url(../images/earthMap.jpeg);
+    background-size:cover;
     /* background-position */
     margin: 0 auto;
     width: 400px;
     height: 400px;
     border-radius: 100%;
-    animation: rotate 20s linear alternate infinite;
+    animation: rotate 40s linear normal infinite;
 }
 @keyframes rotate {
     100%{background-position: 100%;}

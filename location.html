@@ -79,7 +79,7 @@
               
               <h3 class="headers">Points of interest</h3>
               <div id="pointsofi">
-                <button id="locationPlay"><i class="fas fa-play-circle"></i></button>
+                <!-- <button id="locationPlay"><i class="fas fa-play-circle"></i></button> -->
               </div> 
             </div>
 
@@ -90,8 +90,8 @@
 
           <div class="col-xs-12 offset-md-2 col-md-10">
             <form id="form1"> 
-              <input class="text1" type="text" name="sanFrancisco" value="" placeholder="Enter your zipcode here!">
-              <input class="submission1"type="submit" value="Submit">
+              <input class="text1" id="text1" type="text" name="sanFrancisco" value="" placeholder="Enter your zipcode here!">
+              <input class="submission1"type="button" value="Submit" onclick="loadMap()">
             </form>
           </div>
         </section>  
@@ -113,10 +113,12 @@
 
 <!--This is where the map logic begins -->
 
+<script src="geolocation.js"></script>
 
  
         <script>
-          var map, infoWindow;
+
+          //var map, infoWindow;
         
   // var pos ={lat:37.7749, lng:122.4194}
 
@@ -138,25 +140,10 @@
 
 
 
-          function initMap() {
+         /* function initMap() {
 
 
-$("#form1").submit(function (e) {
-              console.log("hi");
 
-              e.preventDefault();
-  $.ajax(`https://maps.googleapis.com/maps/api/geocode/json?address=${e.target[0].value}&key=AIzaSyBZYZbJI_suqw9VC2D1u1Us2e1j0f1mFus`).done((res) => {
-    pos = res["results"][0]["geometry"]["location"]
-    infoWindow = new google.maps.InfoWindow;
-    infoWindow.setPosition(pos);
-    infoWindow.setContent('Here i am!');
-    infoWindow.open(map);
-    map.setCenter(pos);
-    handleLocationError(false, infoWindow, map.getCenter());
-
-              
-
-  })
 
 
                
@@ -186,6 +173,7 @@ $("#form1").submit(function (e) {
                 infoWindow.setPosition(pos);
                 infoWindow.setContent('Here i am!');
                 infoWindow.open(map);
+                showPosition(pos);
                 map.setCenter(pos);
               }, function() {
                 handleLocationError(true, infoWindow, map.getCenter());
@@ -207,7 +195,7 @@ $("#form1").submit(function (e) {
                                   'Here i am');
             infoWindow.open(map);
           }
-        
+        */
         
       
 
@@ -245,7 +233,6 @@ $("#form1").submit(function (e) {
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="geolocation.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZYZbJI_suqw9VC2D1u1Us2e1j0f1mFus&callback=initMap"> </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZYZbJI_suqw9VC2D1u1Us2e1j0f1mFus&callback=getLocation"> </script>
   </body>
 </html>
