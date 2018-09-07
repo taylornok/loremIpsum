@@ -59,29 +59,14 @@ function loadPointsOfInterest(){
         "url": "https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyBZYZbJI_suqw9VC2D1u1Us2e1j0f1mFus&location=" + latlon + "&radius=2000&type=point_of_interest",
         "method": "GET"
     }
-       /* success:function (response) {
-            console.log(response);
-    
-            response.results.forEach(function (location) {
-    
-    
-                $("#pointsofi").append("<li>"+location.name+" , "+ "Rating: " +location.rating+"</li>");
-               var myLatLng = 
-               new google.maps.Marker({
-                    position: myLatLng,
-                    map: map,
-                    title: location.name,
-                    icon: pinSymbol("green")
-                });
-            });
-        }*/
-    
+      
 
 
     $.ajax(settings).done(function (response) {
         console.log(response.results);
         response.results.forEach(function (location) {
-
+            console.log(res);
+            
             
             $("#pointsofi").append("<li>"+location.name+" , "+ "Rating: " +location.rating+"</li>");
            var myLatLng = { lat: location.geometry.location.lat, lng: location.geometry.location.lng }
@@ -117,6 +102,7 @@ function showError(error) {
 
         $( ".btn1" ).click(function() {
             window.location.href="location.html"
+
         });
 
 
@@ -143,6 +129,28 @@ $.ajax("https://maps.googleapis.com/maps/api/geocode/json?address="+$("#text1").
 });
 
         };
+
+
+
+
+
+ /* success:function (response) {
+            console.log(response);
+    
+            response.results.forEach(function (location) {
+    
+    
+                $("#pointsofi").append("<li>"+location.name+" , "+ "Rating: " +location.rating+"</li>");
+               var myLatLng = 
+               new google.maps.Marker({
+                    position: myLatLng,
+                    map: map,
+                    title: location.name,
+                    icon: pinSymbol("green")
+                });
+            });
+        }*/
+    
     
     
 
