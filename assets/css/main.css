@@ -180,7 +180,7 @@ text-align: center;
     animation: rotate 40s linear normal infinite;
 }
 @keyframes rotate {
-    100%{background-position: 100%;}
+    100%{background-position: -100%;}
 }
 
 
@@ -198,20 +198,25 @@ text-align: center;
 
 /* desktop computer width */
 @media screen and (max-width: 980px) {
-    width: 100%;
+    
+    body {
+        width: 100%;
 
 }
 
 
 
 
-
+}
 
 
 
 /* Ipad */
 @media screen and (max-width: 768px) {
-    width: 100%;
+    body {
+        width: 100%;
+
+}
 
 
 
@@ -226,7 +231,10 @@ text-align: center;
 
 /* mobiles */
 @media screen and (max-width: 640px) {
-    width: 100%;
+    body {
+        width: 100%;
+
+}
 
 
 

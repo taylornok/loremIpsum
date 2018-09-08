@@ -53,8 +53,8 @@ function pinSymbol(color) {
 function loadPointsOfInterest(){
     var settings = {
         "async": true,
-        /*"dataType": 'text',
-        "contentType": "application/json; charset=utf-8",*/
+        // /*"dataType": 'text',
+        // "contentType": "application/json; charset=utf-8",*/
         "crossDomain": true,
         "url": "https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyBZYZbJI_suqw9VC2D1u1Us2e1j0f1mFus&location=" + latlon + "&radius=2000&type=point_of_interest",
         "method": "GET"
@@ -100,10 +100,10 @@ function showError(error) {
 
 
 
-        $( ".btn1" ).click(function() {
-            window.location.href="location.html"
+        // $(".btn1").click(function() {
+        //     window.location.href="location.html"
 
-        });
+        // });
 
 
 
