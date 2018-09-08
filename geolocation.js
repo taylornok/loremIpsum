@@ -124,28 +124,3 @@ function showError(error) {
             });
 
 };
-
-
-
-
-
- /* success:function (response) {
-            console.log(response);
-    
-            response.results.forEach(function (location) {
-    
-    
-                $("#pointsofi").append("<li>"+location.name+" , "+ "Rating: " +location.rating+"</li>");
-               var myLatLng = 
-               new google.maps.Marker({
-                    position: myLatLng,
-                    map: map,
-                    title: location.name,
-                    icon: pinSymbol("green")
-                });
-            });
-        }*/
-    
-    
-    
-
