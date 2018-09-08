@@ -9,6 +9,7 @@ function getLocation() {
     }
 }
 
+
 var latlon;
 var map;
 //show the location
@@ -55,8 +56,12 @@ function loadPointsOfInterest(){
         "async": true,
         // /*"dataType": 'text',
         // "contentType": "application/json; charset=utf-8",*/
+        "headers":{
+            "Access-Control-Allow-Origin": "*"
+
+        },
         "crossDomain": true,
-        "url": "https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyBZYZbJI_suqw9VC2D1u1Us2e1j0f1mFus&location=" + latlon + "&radius=2000&type=point_of_interest",
+        "url": "https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyBZYZbJI_suqw9VC2D1u1Us2e1j0f1mFus&location=" + latlon + "&radius=2000&type=bar",
         "method": "GET"
     }
       
@@ -65,10 +70,10 @@ function loadPointsOfInterest(){
     $.ajax(settings).done(function (response) {
         console.log(response.results);
         response.results.forEach(function (location) {
-            console.log(res);
+           // console.log(res);
             
             
-            $("#pointsofi").append("<li>"+location.name+" , "+ "Rating: " +location.rating+"</li>");
+            $("#pointsofi").append("<li>" + "<button>" +location.name+  "</button>"+ " , " + " Rating: " +location.rating+"</li>");
            var myLatLng = { lat: location.geometry.location.lat, lng: location.geometry.location.lng }
            new google.maps.Marker({
                 position: myLatLng,
@@ -109,26 +114,16 @@ function showError(error) {
 
     
     
-        function loadMap() {
-            console.log("hi");
+        function loadMap(e) {
+            if (e != undefined) {
+                 e.preventDefault();
+            }
+            $.ajax("https://maps.googleapis.com/maps/api/geocode/json?address="+$("#text1").val()+"&key=AIzaSyBZYZbJI_suqw9VC2D1u1Us2e1j0f1mFus").done((res) => {
+            pos = res["results"][0]["geometry"]["location"]
+            showPosition(pos);
+            });
 
-           // e.preventDefault();
-$.ajax("https://maps.googleapis.com/maps/api/geocode/json?address="+$("#text1").val()+"&key=AIzaSyBZYZbJI_suqw9VC2D1u1Us2e1j0f1mFus").done((res) => {
-  console.log("results"+res.results)
-  pos = res["results"][0]["geometry"]["location"]
-  showPosition(pos);
-  /*infoWindow = new google.maps.InfoWindow;
-  infoWindow.setPosition(pos);
-  infoWindow.setContent('Here i am!');
-  infoWindow.open(map);
-  map.setCenter(pos);
-  handleLocationError(false, infoWindow, map.getCenter());*/
- 
-            
-
-});
-
-        };
+};
 
 
 
