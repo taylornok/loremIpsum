@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS rooteddb;
+CREATE DATABASE rooteddb;
