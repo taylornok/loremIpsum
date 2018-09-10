@@ -17,7 +17,7 @@ module.exports = function(app) {
     res.sendFile(path.resolve(".views/location.html"))
   })
   //Profile page
-  app.get("locations", function(req, res){
+  app.get("profile", function(req, res){
     res.sendFile(path.resolve("./views/profile.html"))
   })
 
@@ -26,5 +26,4 @@ module.exports = function(app) {
     res.render("404");
   })
 };
-
 
