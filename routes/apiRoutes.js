@@ -1,21 +1,18 @@
-var db = require("../models");
+var translation = require("../scripts/translation.js");
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
-    });
+
+  //FTranslation page API routes
+  app.post("/api/translation", function(req, res) {
+    // db.Example.create(req.body).then(function(dbExample) {
+    console.log(req.body)
+
+   translation.translate(req.body, function(result){
+      res.json(result)
+   })
   });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
-    });
-  });
-
-  // Delete an example by id
+  // Delete a favorite location by id -- Need to add in
   app.delete("/api/examples/:id", function(req, res) {
     db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
       res.json(dbExample);
