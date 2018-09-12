@@ -1,4 +1,4 @@
-body{
+body {
     background-color: black;
     background-image: url(../images/travel.jpeg);
     background-size: cover;
@@ -10,39 +10,39 @@ body{
 }
 
 #placeholder1 {
-margin-left: 20%;
-margin-right: 25%;
-margin-top: 300px;
+    margin-left: 20%;
+    margin-right: 25%;
+    margin-top: 300px;
 }
 
-.world{
+.world {
     color: blue;
 }
 
 .go {
-color: white;
+    color: white;
 
 
 }
 
 .submission1 {
-margin-top: 10px;
-margin-left: 20%;
-margin-right: 30%;
-width: 40%;
+    margin-top: 10px;
+    margin-left: 20%;
+    margin-right: 30%;
+    width: 40%;
 }
 
 .text1 {
-margin-top: 20px;
-margin-left: 20%;
-margin-right: 30%;
-width: 40%;
-text-align: center;
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-right: 30%;
+    width: 40%;
+    text-align: center;
 }
 
 
 #map {
-    width:475px;
+    width: 475px;
     height: 400px;
     margin-top: 10px;
 }
@@ -50,8 +50,8 @@ text-align: center;
 /*-------This is for the buttons------------ */
 
 .btn {
-   background-color: black;
-   
+    background-color: black;
+
 }
 
 .btn1 {
@@ -60,10 +60,9 @@ text-align: center;
 
 }
 
-#locationPlay{
+#locationPlay {
     margin-left: 180px;
     margin-top: 150px
-
 }
 
 .loadBtn {
@@ -98,12 +97,12 @@ text-align: center;
     /* background-image: url(../images/travel3.jpeg);
     background-size: cover;*/
     margin-top: 10px;
-    width:475px;
+    width: 475px;
     height: 400px;
     overflow: scroll;
     color: white;
-    
-    
+
+
 
 }
 
@@ -114,11 +113,11 @@ text-align: center;
 #translate {
     background-color: rgb(197, 197, 197);
     margin-top: 10px;
-    width:475px;
+    width: 475px;
     height: 400px;
 }
 
-.headers{
+.headers {
     color: white;
     margin-left: 140px;
 }
@@ -126,7 +125,7 @@ text-align: center;
 #emptyDiv {
     /* background-color: rgb(190, 188, 188); */
     margin-top: 20px;
-    width:475px;
+    width: 475px;
     height: 400px;
     margin-left: auto;
     margin-right: auto;
@@ -140,7 +139,7 @@ text-align: center;
 #emptydiv2 {
     background-color: rgb(190, 188, 188);
     margin-top: 20px;
-    width:475px;
+    width: 475px;
     height: 400px;
 }
 
@@ -155,9 +154,9 @@ text-align: center;
 
 
 .footer {
-    width:100%;
+    width: 100%;
     padding: 10px;
-    height:120px;
+    height: 120px;
     position: fixed;
     background-color: #212529;
 }
@@ -179,8 +178,11 @@ text-align: center;
     border-radius: 100%;
     animation: rotate 20s linear alternate infinite;
 }
+
 @keyframes rotate {
-    100%{background-position: 100%;}
+    100% {
+        background-position: 100%;
+    }
 }
 
 
