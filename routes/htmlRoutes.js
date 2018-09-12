@@ -3,23 +3,27 @@ var path = require("path");
 
 
 
-module.exports = function(app) {
-  
+module.exports = function (app) {
+
   // Should be for main page
-  app.get("/", function(req, res) {
+  app.get("/", function (req, res) {
     res.sendFile(path.resolve("./views/index.html"))
   });
   // This gets the translations page to display it using Express.
-  app.get("/translations", function(req, res){
+  app.get("/translations", function (req, res) {
     res.sendFile(path.resolve("./views/translation.html"))
   })
   // For the location page
-  app.get("/locations", function(req, res){
+  app.get("/locations", function (req, res) {
     res.sendFile(path.resolve(".views/location.html"))
   })
   //Profile page
-  app.get("profile", function(req, res){
+  app.get("/profile", function (req, res) {
     res.sendFile(path.resolve("./views/profile.html"))
+  })
+
+  app.get("/public/styles/main.css", function (req, res) {
+    res.sendFile(path.resolve("./public/styles/main.css"))
   })
 
   // Load example page and pass in an example by id
