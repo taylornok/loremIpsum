@@ -61,8 +61,8 @@ text-align: center;
 }
 
 #locationPlay{
-    margin-left: 180px;
-    margin-top: 150px
+    margin-left: 110px;
+    margin-top: 90px;
 
 }
 
@@ -135,6 +135,8 @@ text-align: center;
 .headerTab {
     text-align: center;
     color: white;
+    text-shadow: 3px 2px black;
+
 }
 
 #emptydiv2 {
@@ -162,6 +164,11 @@ text-align: center;
     background-color: #212529;
 }
 
+.apple {
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
 
 
 /* This is for the orbit */
@@ -185,6 +192,19 @@ li{
     100%{background-position: -100%;}
 }
 
+.globe1 {
+    background-image: url(../images/earthMap.jpeg);
+    background-size:cover;
+    /* background-position */
+    margin: 0 auto;
+    width: 225px;
+    height: 225px;
+    border-radius: 100%;
+    animation: rotate 40s linear normal infinite;
+}
+@keyframes rotate {
+    100%{background-position: -100%;}
+}
 
 
 

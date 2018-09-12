@@ -79,7 +79,10 @@
               
               <h3 class="headers">Points of interest</h3>
               <div id="pointsofi">
-                <!-- <button id="locationPlay"><i class="fas fa-play-circle"></i></button> -->
+                <button id="locationPlay">
+                  <div class="globe1">
+                  </div>
+                </button>
               </div> 
             </div>
 
@@ -90,7 +93,7 @@
 
           <div class="col-xs-12 offset-md-2 col-md-10">
             <form id="form1" onsubmit="loadMap(event)"> 
-              <input class="text1" id="text1" type="text" name="sanFrancisco" value="" placeholder="Enter your zipcode here!">
+              <input class="text1" id="text1" type="text" name="sanFrancisco" value="" placeholder="Enter your zipcode or city here!">
               <input class="submission1" type="button" value="Submit" onclick="loadMap()">
             </form>
           </div>

@@ -23,7 +23,7 @@ function showPosition(position) {
     var myLatLng = { lat: lat, lng: lng };
 
     map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 13,
+        zoom: 11,
         center: myLatLng
     });
 
@@ -61,7 +61,7 @@ function loadPointsOfInterest(){
 
         },
         "crossDomain": true,
-        "url": "https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyBZYZbJI_suqw9VC2D1u1Us2e1j0f1mFus&location=" + latlon + "&radius=2000&type=bar",
+        "url": "https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyBZYZbJI_suqw9VC2D1u1Us2e1j0f1mFus&location=" + latlon + "&radius=10000&type=bar",
         "method": "GET"
     }
       
@@ -73,7 +73,7 @@ function loadPointsOfInterest(){
            // console.log(res);
             
             
-            $("#pointsofi").append("<li>" + "<button>" +location.name+  "</button>"+ " , " + " Rating: " +location.rating+"</li>");
+            $("#pointsofi").append("<li>" + "<button class='apple'>" +location.name+  "</button>"+ " , " + " Rating: " +location.rating+"</li>");
            var myLatLng = { lat: location.geometry.location.lat, lng: location.geometry.location.lng }
            new google.maps.Marker({
                 position: myLatLng,
@@ -124,3 +124,5 @@ function showError(error) {
             });
 
 };
+
+
