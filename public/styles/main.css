@@ -63,7 +63,11 @@ text-align: center;
 
 #locationPlay{
     margin-left: 110px;
+<<<<<<< HEAD:public/styles/main.css
     margin-top: 100px
+=======
+    margin-top: 90px;
+>>>>>>> 4a5ac465e53e8b64f235cafd26c1a4fade122945:assets/css/main.css
 
 }
 
@@ -139,6 +143,10 @@ text-align: center;
     text-align: center;
     color: white;
     text-shadow: 3px 2px black;
+<<<<<<< HEAD:public/styles/main.css
+=======
+
+>>>>>>> 4a5ac465e53e8b64f235cafd26c1a4fade122945:assets/css/main.css
 }
 
 #emptydiv2 {
@@ -203,25 +211,41 @@ li {
     text-align: center;
 }
 
+<<<<<<< HEAD:public/styles/main.css
 .form-inline {
     text-align: center;
     margin-left: 37%;
 }
+=======
+.apple {
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+>>>>>>> 4a5ac465e53e8b64f235cafd26c1a4fade122945:assets/css/main.css
 
 
 /* This is for the orbit */
 /* ----------------------------------------------------------------------------------------- */
 
-
+li{
+    margin-left: 10px;
+}
 
 .globe {
+<<<<<<< HEAD:public/styles/main.css
     background-image: url(/images/earthMap.jpeg);
     background-size: cover;
+=======
+    background-image: url(../images/earthMap.jpeg);
+    background-size:cover;
+>>>>>>> 4a5ac465e53e8b64f235cafd26c1a4fade122945:assets/css/main.css
     /* background-position */
     margin: 0 auto;
     width: 400px;
     height: 400px;
     border-radius: 100%;
+<<<<<<< HEAD:public/styles/main.css
     animation: rotate 30s linear infinite;
 }
 @keyframes rotate {
@@ -237,11 +261,27 @@ li {
     height: 225px;
     border-radius: 100%;
     animation: rotate 20s linear infinite;
+=======
+    animation: rotate 40s linear normal infinite;
+>>>>>>> 4a5ac465e53e8b64f235cafd26c1a4fade122945:assets/css/main.css
 }
 @keyframes rotate {
     100%{background-position: -100%;}
 }
 
+.globe1 {
+    background-image: url(../images/earthMap.jpeg);
+    background-size:cover;
+    /* background-position */
+    margin: 0 auto;
+    width: 225px;
+    height: 225px;
+    border-radius: 100%;
+    animation: rotate 40s linear normal infinite;
+}
+@keyframes rotate {
+    100%{background-position: -100%;}
+}
 
 
 
@@ -257,20 +297,25 @@ li {
 
 /* desktop computer width */
 @media screen and (max-width: 980px) {
-    width: 100%;
+    
+    body {
+        width: 100%;
 
 }
 
 
 
 
-
+}
 
 
 
 /* Ipad */
 @media screen and (max-width: 768px) {
-    width: 100%;
+    body {
+        width: 100%;
+
+}
 
 
 
@@ -285,7 +330,10 @@ li {
 
 /* mobiles */
 @media screen and (max-width: 640px) {
-    width: 100%;
+    body {
+        width: 100%;
+
+}
 
 
 
