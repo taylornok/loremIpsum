@@ -9,13 +9,17 @@ module.exports = function (app) {
   app.get("/", function (req, res) {
     res.sendFile(path.resolve("./views/index.html"))
   });
+
+  app.get("/index", function (req, res) {
+    res.sendFile(path.resolve("./views/index.html"))
+  });
   // This gets the translations page to display it using Express.
-  app.get("/translations", function (req, res) {
+  app.get("/translation", function (req, res) {
     res.sendFile(path.resolve("./views/translation.html"))
   })
   // For the location page
   app.get("/locations", function (req, res) {
-    res.sendFile(path.resolve(".views/location.html"))
+    res.sendFile(path.resolve("./views/location.html"))
   })
   //Profile page
   app.get("/profile", function (req, res) {

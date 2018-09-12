@@ -21,7 +21,8 @@
     "express-handlebars": "^3.0.0",
     "mysql": "^2.16.0",
     "mysql2": "^1.6.1",
-    "sequelize": "^4.38.0"
+    "sequelize": "^4.38.0",
+    "watson-developer-cloud": "^3.9.1"
   },
   "devDependencies": {
     "eslint": "^5.5.0"
