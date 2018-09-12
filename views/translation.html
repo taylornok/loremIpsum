@@ -41,10 +41,10 @@
           Rooted<i class="fa fa-plane" style="font-size:24px;"></i>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="/index">Home</a>
-          <a class="dropdown-item" href="/locations">Locations</a>
-          <a class="dropdown-item" href="/translation">Dictionary/Translate</a>
-          <a class="dropdown-item" href="/profile">Profile</a>
+            <a class="dropdown-item" href="/index">Home</a>
+            <a class="dropdown-item" href="/locations">Locations</a>
+            <a class="dropdown-item" href="/translation">Dictionary/Translate</a>
+            <a class="dropdown-item" href="/login">Profile</a>
         </div>
       </div>
       <div class="row">
@@ -55,8 +55,9 @@
           </div> -->
 
         <div class="col-xs-4 col-md-4 col-xl-6">
-          <button type="button" class="btn1 btn-outline-dark my-2 my-sm-0" onclick="googleLogin();"><i class="fab fa-google"
-              style="font-size:36px"></i>Google Login</button>
+            <button type="button" class="btn1"><i class="fas fa-sign-in-alt"></i>
+              Login</button>
+          </div>
         </div>
     </nav>
 
@@ -66,40 +67,53 @@
 
   <div class="wrapper">
 
-    <div id="main-container" class="container">
-      <section class="main-section">
-
-        <div class="row">
-          <div class="col-xs-6 col-md-6 col-xl-6">
-            <h3 class="headers">Translation</h3>
-            <div class="row">
+    <div class="wrapper">
+      <h1 class="headerTab">Translation Generator!</h1>
+  
+  
+      <div id="main-container" class="container">
+        <section class="main-section">
+  
+          <div class="row">
+            <div class="col-xs-12 col-md-12 col-xl-12">
               <form class="form-inline">
                 <label class="sr-only" for="inlineFormInputName2">Name</label>
                 <input type="text" class="form-control mb-2 mr-sm-2" id="userInput" placeholder="Where would you like to go?">
-
+      
                 <button type="submit" class="btn btn-primary mb-2" id="submitButton">Submit</button>
-
-                <p id="translatedWord"></p>
+                
+                
               </form>
+              
+              <div id="emptydiv3">
+                   <p id="translatedWord"></p>
+                  
+                </div>
+              </div>
             </div>
-
           </div>
+      </div>
+
+   
+       
+
+
+<script>
+    document.getElementById("loginBtn").onclick = function () {
+        location.href = "/login";
+    };
+
+</script>
+
+         
+
+          <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZYZbJI_suqw9VC2D1u1Us2e1j0f1mFus&callback=initMap">
+          </script> -->
+  </div>
 
 
 
-
-
-
-
-          <br><br><br><br><br>
-
-          <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZYZbJI_suqw9VC2D1u1Us2e1j0f1mFus&callback=initMap">
-          </script>
-        </div>
-
-
-
-
+        <br><br><br><br>
         <!-- Footer -->
 
         <footer class="footer">
@@ -107,6 +121,13 @@
             <span class="copy">© Rooted</span>
           </div>
         </footer>
+
+
+        <script>
+        
+        </script>
+
+
 
 
 
@@ -119,6 +140,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
           crossorigin="anonymous"></script>
         <script src="/public/js/handleTranslation.js"></script>
+        <script type="text/javascript" src="/public/js/button.js"></script>
 </body>
 
 </html>

@@ -2,7 +2,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
-
+var cookieParser = require('cookie-parser')
 var db = require("./models");
 
 var app = express();
@@ -12,6 +12,7 @@ var PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({
     extended: false
 }));
+app.use(cookieParser())
 app.use(bodyParser.json());
 app.use(express.static("public"));
 

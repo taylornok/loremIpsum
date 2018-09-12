@@ -9,17 +9,21 @@ function getLocation() {
     }
 }
 
-var latlon="";
+
+var latlon;
 var map;
 //show the location
 function showPosition(position) {
 
-    latlon = position.coords.latitude + "," + position.coords.longitude;
+    var lat=position.coords?position.coords.latitude:position.lat;
+    var lng=position.coords?position.coords.longitude:position.lng;
+    
+    latlon = lat + "," + lng;
 
-    var myLatLng = { lat: position.coords.latitude, lng: position.coords.longitude };
+    var myLatLng = { lat: lat, lng: lng };
 
     map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 13,
+        zoom: 11,
         center: myLatLng
     });
 
@@ -29,6 +33,7 @@ function showPosition(position) {
         title: 'You are here!'
     });
 
+    $("#pointsofi").html("");
     loadPointsOfInterest();
 
 }
@@ -49,18 +54,26 @@ function pinSymbol(color) {
 function loadPointsOfInterest(){
     var settings = {
         "async": true,
+        // /*"dataType": 'text',
+        // "contentType": "application/json; charset=utf-8",*/
+        "headers":{
+            "Access-Control-Allow-Origin": "*"
+
+        },
         "crossDomain": true,
-        "url": "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyBZYZbJI_suqw9VC2D1u1Us2e1j0f1mFus&location=" + latlon + "&radius=2000&type=point_of_interest&type=night_club&type=campground&type=bar",
+        "url": "https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyBZYZbJI_suqw9VC2D1u1Us2e1j0f1mFus&location=" + latlon + "&radius=10000&type=bar",
         "method": "GET"
     }
+      
 
 
     $.ajax(settings).done(function (response) {
-        //console.log(response);
+        console.log(response.results);
         response.results.forEach(function (location) {
-
-
-            $("#pointsofi").append("<li>"+location.name+" , "+ "Rating: " +location.rating+"</li>");
+           // console.log(res);
+            
+            
+            $("#pointsofi").append("<li>" + "<button class='apple'>" +location.name+  "</button>"+ " , " + " Rating: " +location.rating+"</li>");
            var myLatLng = { lat: location.geometry.location.lat, lng: location.geometry.location.lng }
            new google.maps.Marker({
                 position: myLatLng,
@@ -72,17 +85,39 @@ function loadPointsOfInterest(){
     });
 }
 
+function showError(error) {
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            x.innerHTML = "User denied the request for Geolocation."
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location information is unavailable."
+            break;
+        case error.TIMEOUT:
+            x.innerHTML = "The request to get user location timed out."
+            break;
+        case error.UNKNOWN_ERROR:
+            x.innerHTML = "An unknown error occurred."
+            break;
+    }
+}
 
 
 
-        $( ".btn1" ).click(function() {
-            window.location.href="location.html"
-        });
 
 
 
     
     
-    
-    
+        function loadMap(e) {
+            if (e != undefined) {
+                 e.preventDefault();
+            }
+            $.ajax("https://maps.googleapis.com/maps/api/geocode/json?address="+$("#text1").val()+"&key=AIzaSyBZYZbJI_suqw9VC2D1u1Us2e1j0f1mFus").done((res) => {
+            pos = res["results"][0]["geometry"]["location"]
+            showPosition(pos);
+            });
+
+};
+
 
