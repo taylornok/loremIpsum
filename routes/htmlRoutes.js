@@ -38,6 +38,10 @@ module.exports = function (app) {
     res.sendFile(path.resolve("./public/js/handleTranslation.js"))
   })
 
+  app.get("/public/images/travel.jpeg", function (req, res) {
+    res.sendFile(path.resolve("./public/images/travel.jpeg"))
+  })
+
   // Load example page and pass in an example by id
   /*   app.get("/example/:id", function (req, res) {
       db.Example.findOne({
