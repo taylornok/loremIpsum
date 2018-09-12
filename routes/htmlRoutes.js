@@ -30,6 +30,14 @@ module.exports = function (app) {
     res.sendFile(path.resolve("./public/styles/main.css"))
   })
 
+  app.get("/public/js/geolocation.js", function (req, res) {
+    res.sendFile(path.resolve("./public/js/geolocation.js"))
+  })
+
+  app.get("/public/js/handleTranslation.js", function (req, res) {
+    res.sendFile(path.resolve("./public/js/handleTranslation.js"))
+  })
+
   // Load example page and pass in an example by id
   /*   app.get("/example/:id", function (req, res) {
       db.Example.findOne({
