@@ -69,21 +69,40 @@
     <div id="main-container" class="container">
       <section class="main-section">
 
-        <div class="row">
-          <div class="col-xs-6 col-md-6 col-xl-6">
-            <h3 class="headers">Translation</h3>
-            <div class="row">
-              <form class="form-inline">
-                <label class="sr-only" for="inlineFormInputName2">Name</label>
-                <input type="text" class="form-control mb-2 mr-sm-2" id="userInput" placeholder="Where would you like to go?">
-
-                <button type="submit" class="btn btn-primary mb-2" id="submitButton">Submit</button>
-
-                <p id="translatedWord"></p>
-              </form>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body" id="translator">
+              <h5 class="card-title">  Translate common words or phrases!</h5>
+              <div class="col-7" id ="form">
+                <select class="custom-select custom-select-md" id ="chooseLanguageSource">
+                  <option selected>Translate from (select language)</option>
+                  <option value="1">Placeholder</option>
+                </select>
+                <select class="custom-select custom-select-md" id="chooseLanguageTarget">
+                  <option selected>Translate to (select language)</option>
+                  <option value="1">Placeholder</option>
+                  
+                </select>
+                <hr>
+                <form class="form-inline">
+                    <input type="text" class="form-control mb-2 mr-sm-2" id="userInput" style = "width: 600px" placeholder="What would you like to say?">
+                  </form>
+                <div class = "col-md-4 offset-4 ">
+                  <button type="submit" class="btn btn-primary mb-2" id="submitButton">Submit</button>
+                  </div>
+                </div>
+                <!-- <p class="card-text"><small class="text-muted">#</small></p> -->
+              </div>
             </div>
-
+            <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">You said: </h4>
+              <div>
+                <p id ="translatedWord"></p>
+              </div>
+            </div>
           </div>
+        </div>
 
 
 
