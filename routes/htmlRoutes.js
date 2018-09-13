@@ -2,7 +2,6 @@ var db = require("../models");
 var path = require("path");
 
 
-
 module.exports = function (app) {
 
  
@@ -24,10 +23,25 @@ module.exports = function (app) {
   })
   //Profile page
   app.get("/profile", function (req, res) {
+
    
     console.log('Cookies: ', req.cookies);
     try {
-      if (res.cookies["name"] == "") {
+      if (req.cookies["userinfo"] == undefined) {
+        res.redirect("/signup")
+      } else {
+        res.sendFile(path.resolve("./views/profile.html"))
+      }
+    } catch (error) {
+      res.redirect("/signup")
+    }
+  })
+  app.post("/profile", function (req, res) {
+
+   
+    console.log('Cookies: ', req.cookies);
+    try {
+      if (req.cookies["userinfo"] == undefined) {
         res.redirect("/signup")
       } else {
         res.sendFile(path.resolve("./views/profile.html"))
