@@ -22,11 +22,11 @@ module.exports = function (app) {
   //Profile page
   app.get("/profile", function (req, res) {
     try {
-      req.user = JSON.parse( req.cookies["userinfo"])
+      req.user = JSON.parse(req.cookies["userinfo"])
       console.log(req.user);
-      
+
       if (req.user["username"] != "") {
-        res.render("profile",req.user)
+        res.render("profile", req.user)
       } else {
         res.redirect("/signup")
       }
@@ -37,9 +37,9 @@ module.exports = function (app) {
   app.post("/profile", function (req, res) {
     console.log(req.user);
     try {
-      req.user = JSON.parse( req.cookies["userinfo"])
+      req.user = JSON.parse(req.cookies["userinfo"])
       if (req.user["username"] != "") {
-        res.render("profile",req.user)
+        res.render("profile", req.user)
       } else {
         res.redirect("/signup")
       }
@@ -49,8 +49,8 @@ module.exports = function (app) {
   })
 
 
-    console.log('Cookies: ', req.cookies);
-    try {
+  //console.log('Cookies: ', req.cookies);
+  /*   try {
       if (req.cookies["userinfo"] == undefined) {
         res.redirect("/signup")
       } else {
@@ -58,8 +58,8 @@ module.exports = function (app) {
       }
     } catch (error) {
       res.redirect("/signup")
-    }
-  })
+    } */
+
   app.post("/profile", function (req, res) {
 
 
@@ -74,8 +74,8 @@ module.exports = function (app) {
       res.redirect("/signup")
     }
   })
-   // Should be for main page
-   app.get("/*", function (req, res) {
+  // Should be for main page
+  app.get("/*", function (req, res) {
     res.sendFile(path.resolve("./views/index.html"))
   });
 
