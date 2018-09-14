@@ -1,26 +1,39 @@
-$(document).ready(function (){
-    
+$(document).ready(function () {
 
-    $("#submitButton").on("click", function (event){
+
+    $("#submitButton").on("click", function (event) {
         event.preventDefault()
-        var userInput = {text: $("#userInput").val().trim()}
-        var langTarget = {text: $("#languageTargetChoice").val()}
+        var userInput = {
+            text: $("#userInput").val().trim()
+        }
+        var langTarget = {
+            text: $("#languageTargetChoice").val()
+        }
         var data = {
             "userInput": userInput,
             "langTarget": langTarget
         }
-        $.ajax({method:"POST", url: "/api/translation", data: data}).then (function (results){
+        $.ajax({
+            method: "POST",
+            url: "/api/translation",
+            data: data
+        }).then(function (results) {
             console.log(results)
             console.log(langTarget)
-            $("#translatedWord").text(results.translations[0].translation)
-            
+            //$("#translatedWord").text(results.translations[0].translation)
+
+            document.getElementById("translatedWord").innerHTML = results.translations[0].translation;
+
         })
     })
-    
+
 
     $(document).ready(function () {
         console.log("in the display function")
-        $.ajax({type: "GET", url: "/api/translation/listKnownLanguages"}).then(function(results){
+        $.ajax({
+            type: "GET",
+            url: "/api/translation/listKnownLanguages"
+        }).then(function (results) {
             console.log('these are source results' + JSON.stringify(results));
             var languages = results.languages;
             console.log('languages', languages);
@@ -32,15 +45,15 @@ $(document).ready(function (){
                     text: langNames,
                     val: langCodes
                 });
-                
-                
+
+
                 $("#languageTargetChoice").append(menuOptions);
             }
-            
+
         })
 
     })
-       
+
 
 
 
@@ -55,12 +68,12 @@ $(document).ready(function (){
 //     }).then(function(response) {
 
 //         var results = response.data;
-        
+
 
 //         for (let i = 0; i < 10; i++) {
 //             console.log("response", response);
 //             console.log("queryURL");
-        
+
 
 //             //div to hold gifs
 //             var gifDiv = $("<div class = 'gifs'>");
@@ -77,22 +90,22 @@ $(document).ready(function (){
 //             $("#rating-view").append(gifDiv)
 //             var gifDisplay = $("<img>").attr("src", results[i].images.fixed_height.url);
 
-            
+
 //             gifDisplay.attr({
 //                 "data-animate": results[i].images.fixed_height.url,
 //                 "data-still": results[i].images.fixed_height_still.url,
 //                 "class": "gif",
-                
+
 //             })
-            
-            
+
+
 //             //Take image and append to the gif div we created.
 //             gifDisplay.append(gifDiv);
 //             //Take both of these in gif-display and send it to the pre-defined "gif-view"
-            
+
 //             $("#gif-view").append(gifDisplay);
 
-            
-            
-            
+
+
+
 //         }
