@@ -14,13 +14,15 @@ var translator = {
   listKnownLanguages: listKnownLanguages
 }
 //--------------API functions to gather our data----------------
-function translate (userInput, cb) {
-  console.log(userInput)
+function translate (data, cb) {
+  console.log("this is the data",data)
+  console.log("this is what data.langTarget", data.langTarget)
+
   languageTranslator.translate(
     {
-      text: userInput.text, //will add userInput selector
+      text: data["userInput[text]"], //will add userInput selector
       source: 'en', //will add dropdown menu selector
-      target: 'es' //will add dropdown menu selector
+      target: data["langTarget[text]"]//will add dropdown menu selector
     },
     function(err, translation) {
       if (err)  {
@@ -33,7 +35,7 @@ function translate (userInput, cb) {
 };
 
 
-function identifyLanguage (text){
+function identifyLanguage (userInput, cb){
 
   languageTranslator.identify(
     {
@@ -52,18 +54,24 @@ function identifyLanguage (text){
 
 
 //---just so we know what languages are available --- may need to add to dropdown menu list-------------
-function listKnownLanguages(){
+function listKnownLanguages(cb){
 
   languageTranslator.listIdentifiableLanguages(
       {},
       function(err, response) {
-        if (err)
+        if (err) {
           console.log(err)
-        else
-          console.log(JSON.stringify(response, null, 2));
+        }    
+        else {
+          console.log("Recognized Languages " + JSON.stringify(response, null, 2));
+          cb(response)
+        }
+          // console.log(response.languages[0])
+
       }
   );
 }
+
 
 module.exports = (translator)
 

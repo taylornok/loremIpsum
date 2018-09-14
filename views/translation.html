@@ -74,14 +74,17 @@
             <div class="card-body" id="translator">
               <h5 class="card-title">  Translate common words or phrases!</h5>
               <div class="col-7" id ="form">
-                <select class="custom-select custom-select-md" id ="chooseLanguageSource">
+                <!-- <select class="custom-select custom-select-md" id ="languageSourceChoice">
                   <option selected>Translate from (select language)</option>
-                  <option value="1">Placeholder</option>
-                </select>
-                <select class="custom-select custom-select-md" id="chooseLanguageTarget">
+                  <div id="langOptions">
+                    <option value="1"></option>
+                  </div>
+                </select> -->
+                <select class="custom-select custom-select-md" id="languageTargetChoice">
                   <option selected>Translate to (select language)</option>
-                  <option value="1">Placeholder</option>
-                  
+                  <div id="langOptions">
+                      <option value="1"></option>
+                  </div>
                 </select>
                 <hr>
                 <form class="form-inline">
@@ -101,6 +104,7 @@
                 <p id ="translatedWord"></p>
               </div>
             </div>
+            <div id="emptyDiv"></div>
           </div>
         </div>
 
