@@ -21,6 +21,17 @@ module.exports = function (app) {
     })
   });
 
+  app.get("/api/translation/listKnownLanguages", function (req, res){
+        console.log('hey im here')
+        translation.listKnownLanguages(function (results){
+          // console.log('mee too')
+          res.json(results)
+        })
+    
+    
+  });
+  
+
 
 
   // Delete a favorite location by id -- Need to add in
