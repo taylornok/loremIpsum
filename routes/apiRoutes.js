@@ -1,6 +1,6 @@
 var translation = require("../scripts/translation.js");
-
-module.exports = function (app) {
+var Cookies = require('cookies')
+module.exports = function(app) {
 
   //FTranslation page API routes
   app.post("/api/translation", function (req, res) {
@@ -9,8 +9,17 @@ module.exports = function (app) {
 
     translation.translate(req.body, function (result) {
       res.json(result)
-    })
-  });
+   })
+  }); 
+
+  app.post("/api/login", function(req, res) {
+    // db.Example.create(req.body).then(function(dbExample) {
+    var cookies = new Cookies(req, res)
+   
+    cookies.set("userinfo", JSON.stringify(req.body))
+    res.redirect(307,("/profile"))
+  }); 
+
 
   app.post("/api/translation", function (req, res) {
     // db.Example.create(req.body).then(function(dbExample) {

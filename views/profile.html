@@ -15,7 +15,7 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-      <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+      <link rel="stylesheet" type="text/css" href="/public/styles/main.css">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     
     <title>Profile</title>
@@ -36,10 +36,10 @@
             Rooted<i class="fa fa-plane" style="font-size:24px;"></i>
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="Index.html">Home</a>
-            <a class="dropdown-item" href="location.html">Locations</a>
-            <a class="dropdown-item" href="translation.html">Dictionary/Translate</a>
-            <a class="dropdown-item" href="profile.html">Profile</a>
+            <a class="dropdown-item" href="/index">Home</a>
+            <a class="dropdown-item" href="/locations">Locations</a>
+            <a class="dropdown-item" href="/translation">Dictionary/Translate</a>
+            <a class="dropdown-item" href="/login">Profile</a>
           </div>
         </div>
         <div class="row">
@@ -50,7 +50,9 @@
           </div> -->
 
           <div class="col-xs-4 col-md-4 col-xl-6">
-            <button type="button" class="btn1 btn-outline-dark my-2 my-sm-0" onclick="googleLogin();"><i class="fab fa-google" style="font-size:36px"></i>Google Login</button> 
+            <button type="button" class="btn1 btn-outline-dark my-2 my-sm-0" onclick="googleLogin();"><i class="fas fa-sign-in-alt"></i>
+              Login</button>
+            </div>
             
 
 
@@ -84,6 +86,13 @@
       
 
 
+        <script>
+            document.getElementById("loginBtn").onclick = function () {
+                location.href = "/profile";
+            };
+
+</script>
+
 
 
         <br><br><br><br><br>
@@ -111,6 +120,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/public/js/button.js"></script>
   <script src="geolocation.js"></script>
   </body>
 </html>

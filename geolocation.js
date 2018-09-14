@@ -105,6 +105,11 @@ function showError(error) {
 
 
 
+        // $(".btn1").click(function() {
+        //     window.location.href="location.html"
+
+        // });
+
 
 
     
