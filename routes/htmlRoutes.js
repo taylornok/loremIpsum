@@ -15,7 +15,8 @@ module.exports = function (app) {
     res.sendFile(path.resolve("./views/signup.html"))
   })
   app.get("/login", function (req, res) {
-    res.sendFile(path.resolve("./views/login.html"))
+     
+    res.redirect("/profile")
   })
 
   // For the location page
@@ -24,13 +25,27 @@ module.exports = function (app) {
   })
   //Profile page
   app.get("/profile", function (req, res) {
-   
-    console.log('Cookies: ', req.cookies);
     try {
-      if (res.cookies["name"] == "") {
-        res.redirect("/signup")
+      req.user = JSON.parse( req.cookies["userinfo"])
+      console.log(req.user);
+      
+      if (req.user["username"] != "") {
+        res.render("profile",req.user)
       } else {
-        res.sendFile(path.resolve("./views/profile.html"))
+        res.redirect("/signup")
+      }
+    } catch (error) {
+      res.redirect("/signup")
+    }
+  })
+  app.post("/profile", function (req, res) {
+    console.log(req.user);
+    try {
+      req.user = JSON.parse( req.cookies["userinfo"])
+      if (req.user["username"] != "") {
+        res.render("profile",req.user)
+      } else {
+        res.redirect("/signup")
       }
     } catch (error) {
       res.redirect("/signup")
