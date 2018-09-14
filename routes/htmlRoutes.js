@@ -2,10 +2,7 @@ var db = require("../models");
 var path = require("path");
 
 
-
 module.exports = function (app) {
-
- 
 
   // This gets the translations page to display it using Express.
   app.get("/translation", function (req, res) {
@@ -15,7 +12,6 @@ module.exports = function (app) {
     res.sendFile(path.resolve("./views/signup.html"))
   })
   app.get("/login", function (req, res) {
-     
     res.redirect("/profile")
   })
 
@@ -52,16 +48,31 @@ module.exports = function (app) {
     }
   })
 
-  app.get("/public/styles/main.css", function (req, res) {
-    res.sendFile(path.resolve("./public/styles/main.css"))
-  })
 
-  app.get("/public/js/geolocation.js", function (req, res) {
-    res.sendFile(path.resolve("./public/js/geolocation.js"))
+    console.log('Cookies: ', req.cookies);
+    try {
+      if (req.cookies["userinfo"] == undefined) {
+        res.redirect("/signup")
+      } else {
+        res.sendFile(path.resolve("./views/profile.html"))
+      }
+    } catch (error) {
+      res.redirect("/signup")
+    }
   })
+  app.post("/profile", function (req, res) {
 
-  app.get("/public/js/handleTranslation.js", function (req, res) {
-    res.sendFile(path.resolve("./public/js/handleTranslation.js"))
+
+    console.log('Cookies: ', req.cookies);
+    try {
+      if (req.cookies["userinfo"] == undefined) {
+        res.redirect("/signup")
+      } else {
+        res.sendFile(path.resolve("./views/profile.html"))
+      }
+    } catch (error) {
+      res.redirect("/signup")
+    }
   })
    // Should be for main page
    app.get("/*", function (req, res) {
@@ -81,5 +92,4 @@ module.exports = function (app) {
       });
     });
     */
- 
 };
